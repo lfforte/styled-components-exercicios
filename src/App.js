@@ -1,6 +1,9 @@
 import React from "react";
 import CardVideo from "./Componentes/CardVideo";
 import "./styles.css";
+import { BodyContainer, MainContainer, TelaToda } from "./GlobalStyled";
+import Header from "./Componentes/Header/Header";
+import Footer from "./Componentes/Footer/Footer";
 
 export default function App() {
   const card1 = {
@@ -10,14 +13,10 @@ export default function App() {
   };
 
   return (
-    <div>
-      <div className="tela-inteira">
-        <header>
-          <h1>LabeTube</h1>
-          <input type="text" placeholder="Busca" id="campoDeBusca" />
-        </header>
-
-        <main>
+    <BodyContainer>
+      <TelaToda>
+        <Header />
+        <MainContainer>
           <nav className="menu-vertical">
             <ul>
               <li className="botoes-meunu-vertical">Início</li>
@@ -36,12 +35,9 @@ export default function App() {
               textoAlternativo={card1.textoAlternativo}
             />
           </section>
-        </main>
-
-        <footer>
-          <h4>Oi! Eu moro no footer!</h4>
-        </footer>
-      </div>
-    </div>
+        </MainContainer>
+        <Footer />
+      </TelaToda>
+    </BodyContainer>
   );
 }
